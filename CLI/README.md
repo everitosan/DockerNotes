@@ -27,9 +27,19 @@ Eliminar todos los contendores
 docker rm -f $(docker ps -aq)
 ```
 
-## Correr un contenedor (all-in-one)
+Correr un volumen asignando nombre
+```
+docker run --name os ubuntu
+```
+
+Correr un contenedor (all-in-one)
 ```
 docker run ubuntu
+```
+
+Correr contenedor de forma interactiva
+```
+docker run -it ubuntu /bin/bash
 ```
 
 ## Volúmenes
@@ -37,5 +47,5 @@ docker run ubuntu
 Montar un volumen compartido con el SO host
 
 ```
-docker run
+docker run -v [HOST_DIR]:[CONTAINER_DIR] ubuntu
 ```
