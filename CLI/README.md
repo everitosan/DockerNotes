@@ -63,3 +63,12 @@ docker volume create [VOLUME_NAME]
 docker run --mount src=[VOLUME_NAME],dst=[CONTAINER_DIR]
 ```
 
+## DockerFiles
+
+Los archivos .Dockerfile escpecifican como se ebe construir un contenedor a partir e una imagen y los procedimientos para llegar al punto final.
+
+Para construir una imagen a partir de un dockerfile se usa:
+ 
+```
+docker build -t [IMAGE_TAG] [PATH_TO_DOCKERFILE]
+```
