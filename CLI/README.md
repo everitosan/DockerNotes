@@ -68,7 +68,17 @@ docker run --mount src=[VOLUME_NAME],dst=[CONTAINER_DIR]
 Los archivos .Dockerfile escpecifican como se ebe construir un contenedor a partir e una imagen y los procedimientos para llegar al punto final.
 
 Para construir una imagen a partir de un dockerfile se usa:
- 
+
 ```
 docker build -t [IMAGE_TAG] [PATH_TO_DOCKERFILE]
+```
+
+Publicar una imagen a hub.docker.com
+```
+docker publish [IMAGE_TAG]
+```
+
+Renombrar el tag de una imagen construida
+```
+docker tag [ACTUAL_TAG] [NEW_TAG]
 ```
