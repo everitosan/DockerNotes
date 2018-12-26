@@ -1,5 +1,0 @@
-From ubuntu
-
-RUN touch /home/user/archivo.txt
-
-
