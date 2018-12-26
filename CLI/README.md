@@ -32,7 +32,7 @@ Correr un contenedor (all-in-one)
 docker run ubuntu
 ```
 
-Correr un volumen asignando nombre
+Correr un contenedor asignando nombre
 ```
 docker run --name [CONTAINER_NAME] ubuntu
 ```
@@ -41,6 +41,12 @@ Correr contenedor de forma interactiva
 ```
 docker run -it ubuntu /bin/bash
 ```
+
+Correr un contenedor y elimnarlo al terminar
+```
+docker run --rm ubuntu
+```
+
 
 ## Puertos
 Port forwarding de nuestro SO Host a el contenedor
@@ -81,4 +87,22 @@ docker publish [IMAGE_TAG]
 Renombrar el tag de una imagen construida
 ```
 docker tag [ACTUAL_TAG] [NEW_TAG]
+```
+Eliminar una imagen
+```
+docker rmi [IMAGE_TAG]
+```
+
+## Network
+Crear una nueva red a la que que se pueden unir otros contenedores
+```
+docker network create --attachable [NETWORK_NAME]
+```
+Conectar un conteedor a la red creada
+```
+docker network connect [NETWORK_NAME] [CONTAINER_NAME]
+```
+Eliminar una red
+```
+docker network rm [NETWORK_NAME]
 ```
