@@ -8,16 +8,17 @@ services:
         source: ./
         target: /usr/src
     depends_on:
-      - postgresql
+      - psql
     ports:
       - "8000:8000"
+    command: ["./wait-for-it.sh", "psql:5432", "--", "python", "manage.py", "runserver", "0.0.0.0:8000"]
     environment:
       DB_PASSWORD: sup3rs3cr3t
       DB_USER: sup3rus3r
       DB_NAME: django
       DB_PORT: 5432
-      DB_HOST: postgresql
-  postgresql:
+      DB_HOST: psql
+  psql:
     image: postgres
     environment:
       POSTGRES_PASSWORD: sup3rs3cr3t
